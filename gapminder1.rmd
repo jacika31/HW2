@@ -30,20 +30,13 @@ library(gapminder)
 
 ```{r}
 gapminder1 <- gapminder %>%
-mutate(logpop = log2(pop))
-
-gapminder1
+  arrange(-lifeExp) %>%
+  filter(continent=='Americas', year==1997) %>%
+  mutate(logpop=log2(pop))
 ```
 
-```{r}
-gapminder1 <- filter(gapminder1, year == "1997" &
-         continent == "Americas")
-gapminder1
-```
 
 ```{r}
-gapminder1 <- gapminder1 %>%
-arrange(desc(lifeExp))
-gapminder1 
+gapminder1
 ```
 
