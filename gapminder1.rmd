@@ -1,0 +1,49 @@
+---
+title: 'Homework #2'
+author: "Aarushi Sahejpal, Jacika Patel, Rafael Saavedra"
+date: "6/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(purrr)
+library(magrittr)
+library(base)
+library(ggplot2)
+```
+
+```{r}
+library(gapminder)
+```
+
+
+# 1) Instructions:   Follow the outline and the sequence of steps illustrated in the notes for creating a branch and pushing to Github.  After executing your steps in the  Bash terminal, produce images 1-5 and finally email your image 5 link  that gives evidence of a successful push and merge.  Also email a Word document that shows the steps and commands that you generated in the Bash terminal.
+
+# Using the imbedded data table gapminder and appropriate dplyr functions, create an R file that contains code to create the following data table. Name this table gapminder1 and save it to your Bash Working Directory.
+
+
+```{r}
+gapminder1 <- gapminder %>%
+mutate(logpop = log2(pop))
+
+gapminder1
+```
+
+```{r}
+gapminder1 <- filter(gapminder1, year == "1997" &
+         continent == "Americas")
+gapminder1
+```
+
+```{r}
+gapminder1 <- gapminder1 %>%
+arrange(desc(lifeExp))
+gapminder1 
+```
+
