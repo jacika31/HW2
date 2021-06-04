@@ -1,0 +1,36 @@
+---
+title: 'Homework #2'
+author: "Aarushi Sahejpal, Jacika Patel, Rafael Saavedra"
+date: "6/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(purrr)
+library(magrittr)
+library(base)
+library(ggplot2)
+```
+
+```{r}
+library(gapminder)
+```
+
+# From the Bash terminal, execute the required commands to push this file to Github.
+# Now create a new branch (named branchone).  On the new branch branchone, you are to create an R file containing the code that will produce the following bar graph. Name this R file gapminderplot
+
+```{r}
+df<-gapminder1
+p<- ggplot(data = df, aes(x = country, y = lifeExp)) +
+  geom_bar(stat = "identity", aes(fill=country)) +
+  coord_flip()
+
+p
+  
+```
